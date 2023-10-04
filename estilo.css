@@ -97,22 +97,24 @@ header {
 }
 
 #pipoca {
-    position: relative;
-    top: 0%;
-    left: -50%;
+    position: absolute;
+    top: 0;
+    left: -20%;
     z-index: 2;
 }
 
 #pipoca>img {
-    width: auto;
+    /* position: relative;
+    top: -100%;
+    left: 30%; */
+    width: 800px;
     height: 800px;
-    transform: rotate(30deg);
 }
 
 #portada>h1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 52%;
     color: aliceblue;
 }
 
@@ -123,8 +125,8 @@ header {
 
 #whatsapp {
     position: absolute;
-    top: 75%;
-    left: 50%;
+    top: 65%;
+    left: 52%;
     padding: 20px 30px;
     background-color: rgba(240, 248, 255, 0.775);
     border-radius: 35px;
@@ -155,20 +157,25 @@ header {
     position: relative;
     overflow: hidden;
     flex-wrap: wrap;
+    background-image: linear-gradient(to left,pink,rgba(221, 160, 221, 0.871), plum);
 }
 
 
 
 #Spipocas>p {
-    text-align: center;
-    font-size: 25px;
+    font-size: 45px;
     font-weight: bold;
     display: inline-block;
+    color: azure;
+}
+#Spipocas>p span{
     color: rgb(239, 1, 120);
+
 }
 
 
 .caja {
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.306));
 
     width: 500px;
     height: 500px;
@@ -202,29 +209,44 @@ media query mobil */
 
     .caja {
         animation: chico 2s ease-in-out forwards, circulo 10s linear 2s infinite alternate;
+        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.302));
     }
     #Spipocas{
         display: flex;
         flex-direction: column;
         justify-content: start;
+        height: auto;
+        background-image: linear-gradient(pink,rgba(221, 160, 221, 0.871), plum);
     }
+   
     #Spipocas > p , .caja {
         text-align: center;
         margin-top: 25px;
+        font-size: 25px;
+        z-index: 2;
+    }
+    #Spipocas > p::after{
+        display: inline-block;
+        content: "";
     }
     .nada{
         display: block;
     }
-    .nada::after{
+    .nada::before{
         display: block;
         margin-top: 25px;
+        /* content: "No te puede faltar para\A tus eventos pidelos  ahora"; */
+
         content: "No te puede faltar para tus eventos pidelos  ahora";
+        /* white-space: pre; */
+        z-index: 2;
     }
+   
+    
     @keyframes chico {
     
 
         100% {
-            animation: circulo 10s linear infinite alternate;
 
             width: 350px;
             height: 350px;

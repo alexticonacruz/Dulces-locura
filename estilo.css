@@ -11,17 +11,21 @@
     width: 60px;
     height: 60px;
     font-size: 25px;
-    color: hotpink;
+    color: whitesmoke;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: hotpink;
     position: fixed;
-    top: 50%;
+    top: 90%;
     right: 10px;
     z-index: 100;
     border-radius: 50%;
     border: 1px solid hotpink;
 
+}
+#wa:hover{
+    background-color: whitesmoke;
+    color: hotpink;
 }
 /* .iconW{
     position: fixed;
@@ -239,30 +243,33 @@ header {
 media query mobil */
 @media (max-width: 768px) {
     #portada{
-        height: auto;
+        position: relative;
+        overflow: hidden;
     }
     #pipoca, #portada > h1{
         display: none;
     }
-    #modeloAlgodon > img{
-        height: auto;
-        margin-bottom: -10px;
-    }
-    #whatsapp{
-        /* z-index: 10;
+    #modeloAlgodon {
         position: absolute;
-        width: 80%;
-        top: 85%;
-        left: 0;
-        right: 0;
-        margin: 0px 5%;
-        padding: 15px 20px 5px 20px;
-        height: 50px;
-        text-align: center;
-        background-color: rgba(255, 105, 180, 0.459); */
-        display: none;
-
+        width: 100%;
+        height: 100%;
+        background-image: url(img/modeloV2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
+    #modeloAlgodon > img{
+        display: none;
+    }
+    #modeloAlgodon::before{
+        content:  "";
+        position: absolute;
+        background-image: url(img/modeloV2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 5555555555;
+    }
+    
     #menu{
         display: none;
     }
@@ -317,6 +324,100 @@ media query mobil */
             height: 350px;
         }
     }
+    /* objetivos */
+    .objetivos{
+        flex-direction: column;
+    }
 }
 
 
+/* 
+Objetivos */
+#valores{
+    background-color: rgb(255, 192, 203);
+    color:rgb(199, 43, 121);
+    text-align: center;
+}
+.objetivos{
+    width: 100%;
+    background-color: rgb(255, 192, 203);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.objetivos > div{
+    height: 200px;
+    background-color: rgba(255, 192, 203, 0.851);
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 15px 25px;
+    
+}
+
+.objetivos span{
+    font-size: 100px;
+    padding-top: 30px;
+    color: rgba(255, 105, 180, 0.867);
+}
+.objetivos p{
+    margin-top: 20px;
+    color: rgb(239, 1, 120);
+    font-weight: 600;
+}
+
+.tiempo:hover span{
+    cursor: pointer;
+   animation: tiempo 4s linear infinite alternate;
+}
+@keyframes tiempo{
+    10%{
+        transform: rotate(-45deg);
+    }
+    25%{
+        transform: rotate(0deg);
+        translate: 20% 0;
+    }
+    50%{
+        translate: 150%;
+    }
+}
+
+.security:hover span{
+    cursor: pointer;
+    animation :security 2.5s linear infinite ;
+}
+@keyframes security{
+    50%{
+        transform: scaleX(-1);
+
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+.higiene:hover span{
+    animation: higiene 3s ease-in-out infinite ;
+}
+@keyframes higiene{
+    0%, 100%{
+        translate: 0 0;
+    }
+    50%{
+        translate: 0% -40%;
+    }
+}
+
+footer{
+    width: 100%;
+    overflow: hidden;
+}
+.wave{
+    width: 100%;
+    height: 400px;
+    background-color: rgba(255, 0, 0, 0.265);
+    animation: wave 6s ease-in-out infinite;
+}
+@keyframes wave{
+}
